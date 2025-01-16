@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "student_profiles",
+  "info": {
+    "singularName": "student-profile",
+    "pluralName": "student-profiles",
+    "displayName": "Student Profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

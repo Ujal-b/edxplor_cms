@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "college_profiles",
+  "info": {
+    "singularName": "college-profile",
+    "pluralName": "college-profiles",
+    "displayName": "College Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone_number1": {
+      "type": "string"
+    },
+    "phone_number2": {
+      "type": "string"
+    },
+    "college_description": {
+      "type": "blocks"
+    },
+    "college_type": {
+      "type": "enumeration",
+      "enum": [
+        "Public",
+        "Private",
+        "Community"
+      ]
+    },
+    "why_this_college": {
+      "type": "blocks"
+    },
+    "cover_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "website": {
+      "type": "string"
+    },
+    "affilated_uni": {
+      "type": "enumeration",
+      "enum": [
+        "Tribhuvan University (TU)",
+        "Pokhara University (PU)",
+        "Kathmandu University (KU)",
+        "Purbanchal University (PU)",
+        "Mid Western University (MWU)",
+        "Far Western University (FWU)",
+        "Lumbini Buddhist University (LBU)",
+        "Nepal Sanskrit University (NSU)",
+        "Agriculture and Forestry University (AFU)",
+        "Asia Pacific University (APU)"
+      ]
+    },
+    "programs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::program.program",
+      "inversedBy": "colleges"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "college"
+    }
+  }
+}

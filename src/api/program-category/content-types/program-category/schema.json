@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "program_categories",
+  "info": {
+    "singularName": "program-category",
+    "pluralName": "program-categories",
+    "displayName": "Program Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "programCategory": {
+      "type": "string"
+    },
+    "programName": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program.program",
+      "mappedBy": "category"
+    },
+    "collegeName": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::colleges-detail.colleges-detail",
+      "inversedBy": "programCategories"
+    }
+  }
+}

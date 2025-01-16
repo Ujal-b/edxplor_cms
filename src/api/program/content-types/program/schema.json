@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programs",
+  "info": {
+    "singularName": "program",
+    "pluralName": "programs",
+    "displayName": "programs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "programName": {
+      "type": "string"
+    },
+    "programDescription": {
+      "type": "text"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::program-category.program-category",
+      "inversedBy": "programName"
+    },
+    "whyThisCourse": {
+      "type": "text"
+    },
+    "available_colleges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::colleges-detail.colleges-detail",
+      "mappedBy": "program"
+    },
+    "averageFee": {
+      "type": "string"
+    },
+    "courseDuration": {
+      "type": "string"
+    },
+    "programCoverLink": {
+      "type": "string"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq",
+      "mappedBy": "program"
+    },
+    "degree": {
+      "type": "enumeration",
+      "enum": [
+        "Master",
+        "PhD",
+        "Bachelor"
+      ]
+    },
+    "fieldOfStudy": {
+      "type": "enumeration",
+      "enum": [
+        "IT",
+        "Medical",
+        "Law",
+        "Teacher education"
+      ]
+    },
+    "eligibilityCriteria": {
+      "type": "string"
+    },
+    "admissionProcess": {
+      "type": "string"
+    },
+    "examType": {
+      "type": "string"
+    },
+    "careerOptions": {
+      "type": "string"
+    },
+    "courseShortName": {
+      "type": "string"
+    },
+    "requirementList": {
+      "type": "blocks"
+    },
+    "colleges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::college-profile.college-profile",
+      "mappedBy": "programs"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colleges_details",
+  "info": {
+    "singularName": "colleges-detail",
+    "pluralName": "colleges-details",
+    "displayName": "Colleges Details",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collegeName": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "totalCourses": {
+      "type": "integer"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "collegeType": {
+      "type": "enumeration",
+      "enum": [
+        "public",
+        "private"
+      ]
+    },
+    "graduationRate": {
+      "type": "integer"
+    },
+    "collegeEmail": {
+      "type": "email"
+    },
+    "collegeWebsite": {
+      "type": "string"
+    },
+    "collegeDescription": {
+      "type": "text"
+    },
+    "collegeWhyThis": {
+      "type": "text"
+    },
+    "collegeAdmissionRequirements": {
+      "type": "text"
+    },
+    "collegeAdmissionProcedures": {
+      "type": "text"
+    },
+    "programCategories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program-category.program-category",
+      "mappedBy": "collegeName"
+    },
+    "collegeCoverImageLink": {
+      "type": "text"
+    },
+    "collegeLogoImageLink": {
+      "type": "string"
+    },
+    "fees": {
+      "type": "string"
+    },
+    "program": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::program.program",
+      "inversedBy": "available_colleges"
+    }
+  }
+}
